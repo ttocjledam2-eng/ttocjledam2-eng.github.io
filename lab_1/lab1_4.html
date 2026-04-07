@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Изображения</title>
+</head>
+<body>
+
+<h1>Изображения</h1>
+
+<h2>Задание 1</h2>
+<img src="../images/aquaria.jpg" alt="Аквариум" width="400">
+
+<h2>Задание 2 (ошибочная ссылка)</h2>
+<img src="../images/slonn.png" alt="Слон — изображение не найдено">
+
+<h2>Задание 3 (размеры)</h2>
+<img src="../images/redcat.jpg" width="300" height="200" alt="Рыжий кот">
+
+<h2>Задание 4 (адаптивные)</h2>
+<img src="../images/mushroom.jpg"
+     srcset="../images/mushroom_portrait.jpg 576w,
+             ../images/mushroom_landscape.jpg 768w,
+             ../images/mushroom_retina.jpg 992w"
+     sizes="(max-width: 576px) 100vw,
+            (max-width: 768px) 100vw,
+            (max-width: 992px) 100vw,
+            100vw"
+     alt="Гриб">
+
+<h2>Задание 5 (подпись)</h2>
+<figure>
+    <img src="../images/globus.gif" alt="Глобус">
+    <figcaption>Рис. 1 - Глобус — модель Земли</figcaption>
+</figure>
+
+<h2>Задание 6 (picture)</h2>
+<picture>
+    <source srcset="../images/html5-logo.svg" type="image/svg+xml">
+    <img src="../images/html5-logo.png" alt="HTML5 Logo">
+</picture>
+
+<h2>Задание 7 (WebP и AVIF)</h2>
+<img src="../images/muscle.webp" alt="Muscle WebP" style="max-width:200px;">
+<img src="../images/light.avif" alt="Light AVIF" style="max-width:200px;">
+
+<p><a href="../index.html">← Вернуться к списку</a></p>
+
+</body>
+</html>
