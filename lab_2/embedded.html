@@ -30,7 +30,7 @@
     <h2>Демонстрация добавления встроенного фрейма</h2>
     
     <figure>
-        <iframe width="640" height="360" src="https://vk.com/video_ext.php?oid=-202869502&id=456239024&hd=2" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://vk.com/video_ext.php?oid=-202869502&id=456239024&hd=2" width="640" height="360" frameborder="0" allowfullscreen></iframe>
         <figcaption>Видео с VK</figcaption>
     </figure>
 
@@ -41,7 +41,7 @@
 
     <h2>Демонстрация добавления на страницу видео</h2>
     
-    <video width="640" controls>
+    <video width="640" controls poster="oreluniver_poster.jpg">
         <source src="oreluniver.mp4" type="video/mp4">
         Ваш браузер не поддерживает видео.
     </video>
@@ -53,6 +53,14 @@
         <source src="yuriy-gagarin-poehali.ogg" type="audio/ogg">
         Ваш браузер не поддерживает аудио.
     </audio>
+
+    <h2>Демонстрация добавления PDF на страницу</h2>
+    
+    <object width="800" height="600" data="https://oreluniver.ru/public/file/brendbook/Oreluniver_BrandBook_20190412.pdf" type="application/pdf">
+        <p>Не удалось отобразить PDF-файл. Вы можете скачать его по ссылке: 
+            <a href="https://oreluniver.ru/public/file/brendbook/Oreluniver_BrandBook_20190412.pdf">Скачать PDF</a>
+        </p>
+    </object>
 
 </body>
 
