@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лаба 5.2: Три колонки с float</title>
+    <title>Лабораторная 5.2 - Три колонки (float + border-box)</title>
     <style>
         * {
             margin: 0;
@@ -12,31 +12,22 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             padding: 20px;
-            background: #f0f2f5;
         }
 
-        h1 {
+        /* Контейнер-обёртка для колонок */
+        .columns-container {
+            overflow: hidden; /* Очистка float */
             margin-bottom: 20px;
-            color: #1a1a2e;
-            font-size: 1.8rem;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Колонки с float и border-box */
         #left {
             float: left;
             width: 200px;
             background: #ccf;
             padding: 15px;
-            min-height: 300px;
-            box-sizing: border-box;
-            border-right: 2px solid #99f;
+            min-height: 400px;
         }
 
         #right {
@@ -44,75 +35,50 @@
             width: 200px;
             background: #fcc;
             padding: 15px;
-            min-height: 300px;
-            box-sizing: border-box;
-            border-left: 2px solid #f99;
+            min-height: 400px;
         }
 
         #center {
-            margin-left: 200px;
-            margin-right: 200px;
             background: #cfc;
             padding: 15px;
-            min-height: 300px;
-            box-sizing: border-box;
-            border-left: 2px solid #9f9;
-            border-right: 2px solid #9f9;
+            /* Центральная колонка занимает всё оставшееся место */
+            margin-left: 200px;
+            margin-right: 200px;
+            min-height: 400px;
         }
 
-        /* Очистка float */
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
+        /* Дополнительные стили для контента */
+        .content-block {
+            margin-bottom: 20px;
         }
 
-        .note {
-            margin-top: 20px;
-            padding: 10px;
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            color: #856404;
+        h3 {
+            margin-bottom: 10px;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Три колонки (float + border-box)</h1>
-        <div class="clearfix">
-            <div id="left">
-                <h3>Левая колонка</h3>
-                <p>Ширина: 200px</p>
-                <p>background: #ccf</p>
-                <p>border-box</p>
-                <ul>
-                    <li>Пункт 1</li>
-                    <li>Пункт 2</li>
-                    <li>Пункт 3</li>
-                </ul>
-            </div>
-
-            <div id="right">
-                <h3>Правая колонка</h3>
-                <p>Ширина: 200px</p>
-                <p>background: #fcc</p>
-                <p>border-box</p>
-                <ul>
-                    <li>Ссылка 1</li>
-                    <li>Ссылка 2</li>
-                    <li>Ссылка 3</li>
-                </ul>
-            </div>
-
-            <div id="center">
-                <h3>Центральная колонка</h3>
-                <p>Занимает всё оставшееся место. Используем margin-left и margin-right, равные ширине боковых колонок.</p>
-                <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах.</p>
-            </div>
+    <h2>Три колонки с float и box-sizing: border-box</h2>
+    <div class="columns-container">
+        <div id="left">
+            <h3>Левая колонка (200px)</h3>
+            left<br>left<br>left<br>left<br>left<br>
+            text text text text text text text text text text<br>
+            text text text text text text text text text text<br>
+            left<br>left<br>left
         </div>
-        <div class="note">
-            <strong>✓ Свойство box-sizing: border-box</strong> — ширина включает padding и border.<br>
-            <strong>✓ Float</strong> — левая колонка прижата влево, правая — вправо, центр заполняет остаток с помощью margin.
+        <div id="right">
+            <h3>Правая колонка (200px)</h3>
+            right<br>right<br>right<br>right<br>
+            text text text text text text text text text text<br>
+            text text text text text text text text text text<br>
+            right<br>right
+        </div>
+        <div id="center">
+            <h3>Центральная колонка (оставшееся место)</h3>
+            <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали.</p>
+            <p>Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum, скатился ведущими живет имеет? Океана, страну о продолжил всеми но ее проектах напоивший на берегу даже, реторический назад которое.</p>
         </div>
     </div>
 </body>
