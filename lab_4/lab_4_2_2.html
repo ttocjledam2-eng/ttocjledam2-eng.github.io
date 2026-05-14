@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Оформление вертикального меню</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<style>
+		html {
+			background: #f0f0f0;
+		}
+		
+		.menu {
+			width: 220px;
+			background: #fff;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+		
+		.menu ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.menu li {
+			position: relative;
+			margin: 5px 0;
+		}
+		
+		/* Символ для простых элементов списка (без вложенности) — circle-dot */
+		.menu li:not(:has(ul))::before {
+			content: "\f192";
+			font-family: "Font Awesome 6 Free";
+			font-weight: 900;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #666;
+			font-size: 14px;
+		}
+		
+		/* Символ для элементов с вложенным списком (закрытый) — square-plus */
+		.menu li:has(ul)::before {
+			content: "\f0fe";
+			font-family: "Font Awesome 6 Free";
+			font-weight: 900;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #666;
+			font-size: 14px;
+			transition: content 0.2s ease;
+		}
+		
+		/* При наведении на элемент с вложенным списком меняем символ на square-minus */
+		.menu li:has(ul):hover::before {
+			content: "\f146";
+			color: #ff6600;
+		}
+		
+		.menu li a {
+			display: block;
+			text-decoration: none;
+			color: rgb(78, 122, 166);
+			font-family: Arial, sans-serif;
+			padding: 5px 0 5px 25px;
+		}
+		
+		.menu li a:hover {
+			color: #ff6600;
+			text-decoration: underline;
+		}
+		
+		/* Скрываем вложенные списки по умолчанию */
+		.menu li ul {
+			display: none;
+			margin: 5px 0 5px 0;
+			padding-left: 20px;
+		}
+		
+		/* Показываем вложенные списки при наведении на родительский li */
+		.menu li:hover > ul {
+			display: block;
+		}
+		
+		/* Для вложенных пунктов используем circle-dot */
+		.menu li li::before {
+			content: "\f192";
+			font-family: "Font Awesome 6 Free";
+			font-weight: 900;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #999;
+			font-size: 12px;
+		}
+		
+		/* Убираем изменение символа при наведении на вложенные пункты */
+		.menu li li:has(ul):hover::before {
+			content: "\f192";
+		}
+	</style>
+</head>
+<body>
+
+<nav class="menu">
+	<ul>
+		<li><a href="#">Фильмы</a>
+			<ul>
+				<li><a href="#">Экшн</a></li>
+				<li><a href="#">Мелодрамы</a></li>
+				<li><a href="#">Сериалы</a></li>
+				<li><a href="#">Семейные</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Музыка</a>
+			<ul>
+				<li><a href="#">Классика</a></li>
+				<li><a href="#">Джаз</a></li>
+				<li><a href="#">Рок</a></li>
+				<li><a href="#">Грандж</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Софт</a>
+			<ul>
+				<li><a href="#">Графика</a></li>
+				<li><a href="#">3D-моделирование</a></li>
+				<li><a href="#">Машинопись</a></li>
+				<li><a href="#">Переводчики</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Игры</a>
+			<ul>
+				<li><a href="#">РПГ</a></li>
+				<li><a href="#">Шутеры</a></li>
+				<li><a href="#">Пасьянсы</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+</body>
+</html>
