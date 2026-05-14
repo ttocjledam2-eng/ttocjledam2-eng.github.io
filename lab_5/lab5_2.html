@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба 5.2: Три колонки с float</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background: #f0f2f5;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #1a1a2e;
+            font-size: 1.8rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Колонки с float и border-box */
+        #left {
+            float: left;
+            width: 200px;
+            background: #ccf;
+            padding: 15px;
+            min-height: 300px;
+            box-sizing: border-box;
+            border-right: 2px solid #99f;
+        }
+
+        #right {
+            float: right;
+            width: 200px;
+            background: #fcc;
+            padding: 15px;
+            min-height: 300px;
+            box-sizing: border-box;
+            border-left: 2px solid #f99;
+        }
+
+        #center {
+            margin-left: 200px;
+            margin-right: 200px;
+            background: #cfc;
+            padding: 15px;
+            min-height: 300px;
+            box-sizing: border-box;
+            border-left: 2px solid #9f9;
+            border-right: 2px solid #9f9;
+        }
+
+        /* Очистка float */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .note {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Три колонки (float + border-box)</h1>
+        <div class="clearfix">
+            <div id="left">
+                <h3>Левая колонка</h3>
+                <p>Ширина: 200px</p>
+                <p>background: #ccf</p>
+                <p>border-box</p>
+                <ul>
+                    <li>Пункт 1</li>
+                    <li>Пункт 2</li>
+                    <li>Пункт 3</li>
+                </ul>
+            </div>
+
+            <div id="right">
+                <h3>Правая колонка</h3>
+                <p>Ширина: 200px</p>
+                <p>background: #fcc</p>
+                <p>border-box</p>
+                <ul>
+                    <li>Ссылка 1</li>
+                    <li>Ссылка 2</li>
+                    <li>Ссылка 3</li>
+                </ul>
+            </div>
+
+            <div id="center">
+                <h3>Центральная колонка</h3>
+                <p>Занимает всё оставшееся место. Используем margin-left и margin-right, равные ширине боковых колонок.</p>
+                <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах.</p>
+            </div>
+        </div>
+        <div class="note">
+            <strong>✓ Свойство box-sizing: border-box</strong> — ширина включает padding и border.<br>
+            <strong>✓ Float</strong> — левая колонка прижата влево, правая — вправо, центр заполняет остаток с помощью margin.
+        </div>
+    </div>
+</body>
+</html>

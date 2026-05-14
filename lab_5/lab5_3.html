@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба 5.2: inline-block колонки</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background: #f0f2f5;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #1a1a2e;
+        }
+
+        /* Обертка - располагаем по центру */
+        .wrapper {
+            width: 1000px; /* 200 + 600 + 200 = 1000px */
+            margin: 0 auto;
+            font-size: 0; /* Убираем пробелы между inline-block элементами */
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Общие стили для колонок */
+        .col {
+            display: inline-block;
+            vertical-align: top; /* Выравнивание по верхнему краю */
+            font-size: 16px; /* Восстанавливаем размер шрифта */
+            padding: 15px;
+            min-height: 300px;
+            box-sizing: border-box;
+        }
+
+        .left {
+            width: 200px;
+            background: #ccf;
+        }
+
+        .center {
+            width: 600px;
+            background: #cfc;
+        }
+
+        .right {
+            width: 200px;
+            background: #fcc;
+        }
+
+        .note {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Три колонки (inline-block)</h1>
+    <div class="wrapper">
+        <div class="col left">
+            <h3>Левая колонка</h3>
+            <p>Ширина: 200px</p>
+            <p>display: inline-block</p>
+        </div><!--
+     --><div class="col center">
+            <h3>Центральная колонка</h3>
+            <p>Ширина: 600px</p>
+            <p>Занимает фиксированную ширину.</p>
+            <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она.</p>
+        </div><!--
+     --><div class="col right">
+            <h3>Правая колонка</h3>
+            <p>Ширина: 200px</p>
+            <p>display: inline-block</p>
+        </div>
+    </div>
+    <div class="note">
+        <strong>✓ font-size: 0</strong> для родителя — убирает пробелы между inline-block.<br>
+        <strong>✓ vertical-align: top</strong> — выравнивание колонок по верху.<br>
+        <strong>✓ Ширина wrapper = 1000px</strong> (сумма трёх колонок).
+    </div>
+</body>
+</html>
