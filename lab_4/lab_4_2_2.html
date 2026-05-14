@@ -10,11 +10,9 @@
 		}
 		
 		.menu {
-			width: 220px;
+			width: 200px;
 			background: #fff;
 			padding: 10px;
-			border-radius: 5px;
-			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 		}
 		
 		.menu ul {
@@ -25,83 +23,45 @@
 		
 		.menu li {
 			position: relative;
+			padding-left: 20px;
 			margin: 5px 0;
 		}
 		
-		/* Символ для простых элементов списка (без вложенности) — circle-dot */
-		.menu li:not(:has(ul))::before {
-			content: "\f192";
+		.menu li::before {
+			content: "\f192"; 
 			font-family: "Font Awesome 6 Free";
-			font-weight: 900;
 			position: absolute;
 			left: 0;
-			top: 50%;
-			transform: translateY(-50%);
-			color: #666;
-			font-size: 14px;
+			top: 2px;
+			color: #000000;
 		}
 		
-		/* Символ для элементов с вложенным списком (закрытый) — square-plus */
-		.menu li:has(ul)::before {
+		.menu > ul > li::before {
 			content: "\f0fe";
-			font-family: "Font Awesome 6 Free";
-			font-weight: 900;
-			position: absolute;
-			left: 0;
-			top: 50%;
-			transform: translateY(-50%);
-			color: #666;
-			font-size: 14px;
-			transition: content 0.2s ease;
 		}
 		
-		/* При наведении на элемент с вложенным списком меняем символ на square-minus */
-		.menu li:has(ul):hover::before {
+		.menu > ul > li:hover::before {
 			content: "\f146";
-			color: #ff6600;
 		}
 		
 		.menu li a {
-			display: block;
-			text-decoration: none;
-			color: rgb(78, 122, 166);
+			text-decoration: underline;
+			color: rgb(52, 117, 182);
 			font-family: Arial, sans-serif;
-			padding: 5px 0 5px 25px;
 		}
 		
 		.menu li a:hover {
-			color: #ff6600;
-			text-decoration: underline;
+			color: rgb(0, 26, 255);
 		}
 		
-		/* Скрываем вложенные списки по умолчанию */
 		.menu li ul {
 			display: none;
-			margin: 5px 0 5px 0;
-			padding-left: 20px;
+			margin-bottom: 20px;
+			padding-left: 0;
 		}
-		
-		/* Показываем вложенные списки при наведении на родительский li */
+
 		.menu li:hover > ul {
 			display: block;
-		}
-		
-		/* Для вложенных пунктов используем circle-dot */
-		.menu li li::before {
-			content: "\f192";
-			font-family: "Font Awesome 6 Free";
-			font-weight: 900;
-			position: absolute;
-			left: 0;
-			top: 50%;
-			transform: translateY(-50%);
-			color: #999;
-			font-size: 12px;
-		}
-		
-		/* Убираем изменение символа при наведении на вложенные пункты */
-		.menu li li:has(ul):hover::before {
-			content: "\f192";
 		}
 	</style>
 </head>
