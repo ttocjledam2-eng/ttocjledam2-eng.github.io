@@ -2,57 +2,49 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторная №4 — Задание 1</title>
+    <title>Оформление вертикального меню</title>
     <style>
-        /* Основные стили для меню */
         .menu {
             width: 200px;
-            background: #2c3e50;      /* тёмно-синий фон меню */
-            border-radius: 8px;        /* лёгкое скругление */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: #3b6ea5;
         }
-
+        
         .menu ul {
-            list-style: none;          /* убираем стандартные маркеры */
+            list-style: none;
             margin: 0;
-            padding: 8px 0;            /* отступы сверху/снизу */
+            padding: 5px 10px;
         }
-
+        
         .menu li {
-            padding: 0;                /* нулевые отступы, управляем через ссылку */
+            padding: 5px 0;
         }
-
+        
         .menu li a {
-            display: block;            /* блочный элемент для всей области */
-            padding: 10px 16px;        /* комфортные внутренние отступы */
-            text-transform: uppercase; /* заглавные буквы */
-            text-decoration: none;     /* убираем подчёркивание */
-            background: #2c3e50;       /* фон такой же как у меню */
-            color: #ecf0f1;            /* светлый текст */
-            font-family: 'Segoe UI', Arial, sans-serif;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: all 0.2s ease; /* плавность при наведении */
+            display: block;
+            padding: 10px;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #ffffff;
+            color: #3b6ea5;
+            font-family: Arial, sans-serif;
         }
-
-        /* Эффект при наведении на пункт меню */
+        
         .menu li a:hover {
-            background: #e67e22;        /* яркий оранжевый фон */
-            color: #fff;               /* белый текст */
-            padding-left: 22px;         /* лёгкое смещение для интерактива */
+            background: #dedea8;
+            color: #000;
         }
     </style>
 </head>
 <body>
-    <nav class="menu">
-        <ul>
-            <li><a href="#">Фильмы</a></li>
-            <li><a href="#">Музыка</a></li>
-            <li><a href="#">Софт</a></li>
-            <li><a href="#">Игры</a></li>
-        </ul>
-    </nav>
+
+<nav class="menu">
+    <ul>
+        <li><a href="#">Фильмы</a></li>
+        <li><a href="#">Музыка</a></li>
+        <li><a href="#">Софт</a></li>
+        <li><a href="#">Игры</a></li>
+    </ul>
+</nav>
+
 </body>
 </html>
