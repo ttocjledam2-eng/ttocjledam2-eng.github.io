@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Вертикальное меню с CSS-спрайтом</title>
+    <title>Лабораторная №4 — Задание 2,3,5 (спрайт + подменю)</title>
     <style>
         * {
             margin: 0;
@@ -11,119 +11,168 @@
         }
 
         body {
-            background: #f0f0f0;
-            font-family: Arial, sans-serif;
+            background: #0278d5;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             padding: 30px;
         }
 
+        /* Стили блока меню */
         .menu {
-            width: 250px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 10px;
+            width: 260px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.2s;
         }
 
         .menu ul {
             list-style: none;
         }
 
+        
+        .menu ul ul {
+            padding-left: 20px;
+            background: #fefefe;
+        }
+
         .menu li {
-            position: relative;
+            position: relative;     /* для позиционирования псевдоэлемента с иконкой */
         }
 
-        .menu > ul > li {
-            margin: 2px 0;
-        }
-
+        /* Общие стили для ссылок */
         .menu a {
             display: block;
             text-decoration: none;
-            color: #333;
-            padding: 10px 10px 10px 35px;
-            border-radius: 5px;
-            transition: all 0.2s;
+            color: #1e2f3e;
+            padding: 10px 12px 10px 42px;  
+            font-weight: 500;
+            font-size: 14px;
+            transition: background 0.2s, color 0.2s, padding-left 0.2s;
+            border-left: 3px solid transparent;
         }
 
+        /* Ховер для всех ссылок */
         .menu a:hover {
-            background: #e0e7ff;
-            color: #4f46e5;
+            background: #f0f7ff;
+            color: #e67e22;
+            border-left-color: #e67e22;
+            padding-left: 48px;
         }
 
-        /* === ИКОНКИ ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТ ::before === */
         .menu li::before {
             content: "";
             position: absolute;
-            left: 8px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            background: url('css_sprites.png') no-repeat;
+            width: 22px;
+            height: 22px;
+            background: url('https://placehold.co/400x100/2c3e50/white?text=sprite+example') no-repeat;
+            
+            background-size: 44px 132px;  
+            background-position: 0 0;     /* по умолчанию */
+            pointer-events: none;
+            transition: filter 0.2s;
         }
 
-        /* Координаты для пунктов 1-го уровня */
-        .menu > ul > li:nth-child(1)::before { background-position: 0 0; }      /* Фильмы */
-        .menu > ul > li:nth-child(2)::before { background-position: 0 -25px; }   /* Музыка */
-        .menu > ul > li:nth-child(3)::before { background-position: 0 -50px; }   /* Софт */
-        .menu > ul > li:nth-child(4)::before { background-position: 0 -75px; }   /* Игры */
+        /* ----- Иконки для пунктов первого уровня (Фильмы, Музыка, Софт, Игры) ----- */
+        .menu > ul > li:nth-child(1)::before { background-position: 0 0; }        /* Фильмы */
+        .menu > ul > li:nth-child(2)::before { background-position: 0 -33px; }     /* Музыка */
+        .menu > ul > li:nth-child(3)::before { background-position: 0 -66px; }     /* Софт */
+        .menu > ul > li:nth-child(4)::before { background-position: 0 -99px; }     /* Игры */
 
-        /* Координаты для пунктов подменю */
         .menu li li::before {
-            width: 16px;
-            height: 16px;
-            background-position: 0 -100px;
+            width: 18px;
+            height: 18px;
+            background-position: -22px 0;    /* правая часть спрайта для подпунктов */
+            background-size: 44px 132px;
+            left: 12px;
         }
 
-        /* === ПОДМЕНЮ === */
+        /* для разнообразия чуть сместим координаты для каждого подпункта (необязательно) */
+        .menu li li:nth-child(1)::before { background-position: -22px 0; }
+        .menu li li:nth-child(2)::before { background-position: -22px -22px; }
+        .menu li li:nth-child(3)::before { background-position: -22px -44px; }
+        .menu li li:nth-child(4)::before { background-position: -22px -66px; }
+
+        
         .menu li ul {
             display: none;
-            padding-left: 15px;
         }
 
+        /* При наведении на родительский li — показываем вложенный список */
         .menu li:hover > ul {
             display: block;
+            animation: fadeSlide 0.2s ease;
+        }
+
+        /* Небольшая анимация для плавности */
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        
+        .menu li li a {
+            padding: 8px 12px 8px 40px;
+            font-size: 13px;
+        }
+
+        /* Лёгкая граница для разделов */
+        .menu > ul > li {
+            border-bottom: 1px solid #edf2f7;
+        }
+        .menu > ul > li:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
 <body>
-
-<div class="menu">
-    <ul>
-        <li><a href="#">Фильмы</a>
-            <ul>
-                <li><a href="#">Экшн</a></li>
-                <li><a href="#">Мелодрамы</a></li>
-                <li><a href="#">Сериалы</a></li>
-                <li><a href="#">Семейные</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Музыка</a>
-            <ul>
-                <li><a href="#">Классика</a></li>
-                <li><a href="#">Джаз</a></li>
-                <li><a href="#">Рок</a></li>
-                <li><a href="#">Грандж</a></li>
-                <li><a href="#">Софт</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Софт</a>
-            <ul>
-                <li><a href="#">Графика</a></li>
-                <li><a href="#">3D-моделирование</a></li>
-                <li><a href="#">Машинопись</a></li>
-                <li><a href="#">Переводчики</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Игры</a>
-            <ul>
-                <li><a href="#">РПГ</a></li>
-                <li><a href="#">Шутеры</a></li>
-                <li><a href="#">Пасьянсы</a></li>
-            </ul>
-        </li>
-    </ul>
-</div>
-
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Фильмы</a>
+                <ul>
+                    <li><a href="#">Экшн</a></li>
+                    <li><a href="#">Мелодрамы</a></li>
+                    <li><a href="#">Сериалы</a></li>
+                    <li><a href="#">Семейные</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Музыка</a>
+                <ul>
+                    <li><a href="#">Классика</a></li>
+                    <li><a href="#">Джаз</a></li>
+                    <li><a href="#">Рок</a></li>
+                    <li><a href="#">Грандж</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Софт</a>
+                <ul>
+                    <li><a href="#">Графика</a></li>
+                    <li><a href="#">3D-моделирование</a></li>
+                    <li><a href="#">Машинопись</a></li>
+                    <li><a href="#">Переводчики</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Игры</a>
+                <ul>
+                    <li><a href="#">РПГ</a></li>
+                    <li><a href="#">Шутеры</a></li>
+                    <li><a href="#">Пасьянсы</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div style="margin-top: 20px; font-size: 13px; color: #4a627a; background:#fff; padding: 12px; border-radius: 12px; width: 260px;">
+         <strong>CSS-спрайт</strong>: иконки через <code>::before</code>.<br>
+         Наведи на пункт → появятся подменю.
+    </div>
 </body>
 </html>
