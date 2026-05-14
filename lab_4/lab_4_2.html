@@ -1,131 +1,129 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<title>Оформление вертикального меню</title>
-	<style>
-		html {
-			background: #f0f0f0;
-		}
-		
-		.menu {
-			width: 220px;
-			background: #fff;
-			padding: 10px;
-			border-radius: 5px;
-			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-		}
-		
-		.menu ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-		
-		.menu li {
-			position: relative;
-			margin: 5px 0;
-		}
-		
-		/* Используем ::before для иконок из спрайта */
-		.menu li::before {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 20px;
-			height: 20px;
-			background: url('css_sprites.png') no-repeat;
-		}
-		
-		/* Позиции в спрайте для родительских пунктов */
-		.menu > ul > li:nth-child(1)::before {
-			background-position: 0 0;
-		}
-		
-		.menu > ul > li:nth-child(2)::before {
-			background-position: 0 -30px;
-		}
-		
-		.menu > ul > li:nth-child(3)::before {
-			background-position: 0 -60px;
-		}
-		
-		.menu > ul > li:nth-child(4)::before {
-			background-position: 0 -90px;
-		}
-		
-		/* Позиции в спрайте для вложенных пунктов */
-		.menu li li::before {
-			background-position: 0 -120px;
-			width: 16px;
-			height: 16px;
-		}
-		
-		.menu li a {
-			display: block;
-			text-decoration: none;
-			color: rgb(78, 122, 166);
-			font-family: Arial, sans-serif;
-			padding: 5px 0 5px 28px;
-		}
-		
-		.menu li a:hover {
-			color: #ff6600;
-			text-decoration: underline;
-		}
-		
-		/* Скрываем вложенные списки по умолчанию */
-		.menu li ul {
-			display: none;
-			margin: 5px 0 5px 0;
-			padding-left: 15px;
-		}
-		
-		/* Показываем вложенные списки при наведении */
-		.menu li:hover > ul {
-			display: block;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>Вертикальное меню с CSS-спрайтом</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        .menu {
+            width: 250px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px;
+        }
+
+        .menu ul {
+            list-style: none;
+        }
+
+        .menu li {
+            position: relative;
+        }
+
+        .menu > ul > li {
+            margin: 2px 0;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 10px 10px 10px 35px;
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+
+        .menu a:hover {
+            background: #e0e7ff;
+            color: #4f46e5;
+        }
+
+        /* === ИКОНКИ ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТ ::before === */
+        .menu li::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: url('css_sprites.png') no-repeat;
+        }
+
+        /* Координаты для пунктов 1-го уровня */
+        .menu > ul > li:nth-child(1)::before { background-position: 0 0; }      /* Фильмы */
+        .menu > ul > li:nth-child(2)::before { background-position: 0 -25px; }   /* Музыка */
+        .menu > ul > li:nth-child(3)::before { background-position: 0 -50px; }   /* Софт */
+        .menu > ul > li:nth-child(4)::before { background-position: 0 -75px; }   /* Игры */
+
+        /* Координаты для пунктов подменю */
+        .menu li li::before {
+            width: 16px;
+            height: 16px;
+            background-position: 0 -100px;
+        }
+
+        /* === ПОДМЕНЮ === */
+        .menu li ul {
+            display: none;
+            padding-left: 15px;
+        }
+
+        .menu li:hover > ul {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
-<nav class="menu">
-	<ul>
-		<li><a href="#">Фильмы</a>
-			<ul>
-				<li><a href="#">Экшн</a></li>
-				<li><a href="#">Мелодрамы</a></li>
-				<li><a href="#">Сериалы</a></li>
-				<li><a href="#">Семейные</a></li>
-			</ul>
-		</li>
-		<li><a href="#">Музыка</a>
-			<ul>
-				<li><a href="#">Классика</a></li>
-				<li><a href="#">Джаз</a></li>
-				<li><a href="#">Рок</a></li>
-				<li><a href="#">Грандж</a></li>
-			</ul>
-		</li>
-		<li><a href="#">Софт</a>
-			<ul>
-				<li><a href="#">Графика</a></li>
-				<li><a href="#">3D-моделирование</a></li>
-				<li><a href="#">Машинопись</a></li>
-				<li><a href="#">Переводчики</a></li>
-			</ul>
-		</li>
-		<li><a href="#">Игры</a>
-			<ul>
-				<li><a href="#">РПГ</a></li>
-				<li><a href="#">Шутеры</a></li>
-				<li><a href="#">Пасьянсы</a></li>
-			</ul>
-		</li>
-	</ul>
-</nav>
+<div class="menu">
+    <ul>
+        <li><a href="#">Фильмы</a>
+            <ul>
+                <li><a href="#">Экшн</a></li>
+                <li><a href="#">Мелодрамы</a></li>
+                <li><a href="#">Сериалы</a></li>
+                <li><a href="#">Семейные</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Музыка</a>
+            <ul>
+                <li><a href="#">Классика</a></li>
+                <li><a href="#">Джаз</a></li>
+                <li><a href="#">Рок</a></li>
+                <li><a href="#">Грандж</a></li>
+                <li><a href="#">Софт</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Софт</a>
+            <ul>
+                <li><a href="#">Графика</a></li>
+                <li><a href="#">3D-моделирование</a></li>
+                <li><a href="#">Машинопись</a></li>
+                <li><a href="#">Переводчики</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Игры</a>
+            <ul>
+                <li><a href="#">РПГ</a></li>
+                <li><a href="#">Шутеры</a></li>
+                <li><a href="#">Пасьянсы</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
 
 </body>
 </html>

@@ -1,77 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лаба 5.1: Горизонтальное меню с float</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Использование float при построении горизонтального меню</title>
+	<style>
+		.menu {
+			list-style: none;
+			margin: 0;
+			padding: 10px;
+		}
 
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background: #f5f5f5;
-        }
+		.menu li {
+			float: left; 
+			margin-right: 10px;
+		}
 
-        /* Горизонтальное меню с использованием float */
-        .menu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            background: #2c3e50;
-            border-radius: 8px;
-            overflow: hidden; /* Очищаем float */
-        }
+		.menu li a {
+			display: block;
+			padding: 10px ;
+			background: #f2c4d4;
+			color: #b83b5e;
+		}
 
-        .menu li {
-            float: left; /* Ключевое свойство для горизонтального позиционирования */
-        }
-
-        .menu li a {
-            display: block;
-            padding: 14px 24px;
-            background: #2c3e50;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .menu li a:hover {
-            background: #e74c3c;
-            transform: translateY(-2px);
-        }
-
-        /* Активный пункт меню для примера */
-        .menu li:first-child a {
-            background: #e74c3c;
-        }
-
-        /* Очистка потока после меню */
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-    </style>
+		.menu li a:hover {
+			background: #e8a0b6;
+		}
+	</style>
 </head>
 <body>
-    <h1>Горизонтальное меню (float)</h1>
-    <ul class="menu clearfix">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">О нас</a></li>
-        <li><a href="#">Услуги</a></li>
-        <li><a href="#">Портфолио</a></li>
-        <li><a href="#">Контакты</a></li>
-    </ul>
-    <p style="margin-top: 20px;">Меню построено с использованием <strong>float: left</strong> для элементов li.</p>
+
+<ul class="menu">
+	<li><a href="#">Пункт 1</a></li>
+	<li><a href="#">Пункт 2</a></li>
+	<li><a href="#">Пункт 3</a></li>
+	<li><a href="#">Пункт 4</a></li>
+	<li><a href="#">Пункт 5</a></li>
+</ul>
+
 </body>
 </html>
