@@ -85,18 +85,18 @@
     
     <header style="padding-top:5px;">
       <div id="logo" style="float:left">
-        <img src="images/1.jpg" alt="Лиса Алиса" style="width:80px; border-radius:50%;">
+        <img src="images/1.jpg" alt="Аватар: лиса Алиса с рыжей шерстью" style="width:80px; border-radius:50%;">
       </div>
       <div id="contacts" style="float:right;">
         <i class="fa fa-phone fa-lg"></i> 8-999-123-4567 |
         <i class="fa fa-envelope fa-lg"></i> alisa.fox@mail.ru
-        <a href="#" style="margin-left:10px; color:black;"><i class="fa fa-telegram fa-2x"></i></a>
-        <a href="#" style="margin-left:5px; color:black;"><i class="fa fa-instagram fa-2x"></i></a>
+        <a href="#" style="margin-left:10px; color:black;" aria-label="Telegram"><i class="fa fa-telegram fa-2x"></i></a>
+        <a href="#" style="margin-left:5px; color:black;" aria-label="Instagram"><i class="fa fa-instagram fa-2x"></i></a>
       </div>
       <div class="clearfix"></div>
     </header>
 
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <nav class="navbar navbar-default navbar-static-top">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-menu">
           <span class="sr-only">Меню</span>
@@ -121,121 +121,117 @@
     </nav>
 
     <div id="header-bottom" style="position:relative;">
-      <img src="images/2.jpg" style="width:100%;" alt="Лиса Алиса">
+      <img src="images/2.jpg" style="width:100%;" alt="Лиса Алиса крупным планом в лесу">
       <div id="bannertext" style="position:absolute; top:10%; width:100%; text-align:center; color:white;">
         <div class="hidden-xs">
-          <h1><span class="fox-title">Лиса Нил</span><br><small class="fox-subtitle" style="color: #FFD700;">Хитрая и прекрасная</small></h1>
+          <h1><span class="fox-title">Лиса Алиса</span><br><small class="fox-subtitle" style="color: #FFD700;">Хитрая и прекрасная</small></h1>
         </div>
         <div class="hidden-sm hidden-md hidden-lg">
-          <p class="lead"><span class="fox-title">Лиса Алиса</span> 
+          <p class="lead"><span class="fox-title">Лиса Алиса</span> — рыжая красавица</p>
         </div>
-        <a class="btn btn-warning btn-lg">Погладить по шубке</a>
+        <a class="btn btn-warning btn-lg" href="#">Погладить по шубке</a>
       </div>
     </div>
 
-    <div id="main">
-      <div class="row" style="text-align:center;">
-        <h2>🦊 О лисе Ниле</h2>
-        <p class="lead">Кто я и что люблю</p>
-        <hr />
-        
-        <div class="col-md-4">
-          <img src="images/13.jpg" class="about-img">
-          <h3>Нил </h3>
-          <p><strong>3 года</strong><br>Знак зодиака: Стрелец<br>Родилась: 15.12.2021</p>
+    <main>
+      <section id="main">
+        <div class="row" style="text-align:center;">
+          <h2>О лисе Алисе</h2>
+          <p class="lead">Кто я и что люблю</p>
+          <hr>
+          
+          <div class="col-md-4">
+            <img src="images/13.jpg" class="about-img" alt="Лиса Алиса позирует на фоне осеннего леса">
+            <h3>Алиса</h3>
+            <p><strong>3 года</strong><br>Знак зодиака: Стрелец<br>Родилась: 15.12.2021</p>
+          </div>
+          <div class="col-md-4">
+            <img src="images/7.jpg" class="about-img" alt="Лиса Алиса игриво выглядывает из-за дерева">
+            <h3>Характер</h3>
+            <p>Любопытная, игривая, обожаю бегать и скрываться.</p>
+          </div>
+          <div class="col-md-4">
+            <img src="images/3.jpg" class="about-img" alt="Хитрый взгляд лисы Алисы крупным планом">
+            <h3>Хитрая</h3>
+            <p>А кто мне что сделает.</p>
+          </div>
         </div>
-        <div class="col-md-4">
-          <img src="images/7.jpg" class="about-img">
-          <h3>Характер</h3>
-          <p>Любопытная, игривая, обожаю бегать и скрываться.</p>
+      </section>
+
+      <section id="method">
+        <div class="row" style="text-align:center; background:#FFF3E0;">
+          <h2>Любимые занятия</h2>
+          <p class="lead">Чем я люблю заниматься</p>
+          <hr>
+          
+          <ul class="method-list">
+            <li class="list1_img"><img src="images/5.jpg" class="img-responsive" alt="Лиса Алиса охотится в траве"></li>
+            <li class="list1_desc">
+              <h3>Охота</h3>
+              <p>Обожаю ловить мышек. Могу часами прыгать и выслеживать добычу.</p>
+            </li>
+          </ul>
+
+          <ul class="method-list">
+            <li class="list1_img"><img src="images/4.jpg" class="img-responsive" alt="Лиса Алиса хитро прищурилась"></li>
+            <li class="list1_desc">
+              <h3>Хитрить</h3>
+              <p>Люблю строить планы, как достать всех живых.</p>
+            </li>
+          </ul>
+
+          <ul class="method-list">
+            <li class="list1_img"><img src="images/10.jpg" class="img-responsive" alt="Лиса Алиса сладко спит свернувшись калачиком"></li>
+            <li class="list1_desc">
+              <h3>Сон</h3>
+              <p>Главное моё удовольствие — поспать.</p>
+            </li>
+          </ul>
+
+          <ul class="method-list">
+            <li class="list1_img"><img src="images/6.jpg" class="img-responsive" alt="Лиса Алиса задумчиво сидит на пеньке"></li>
+            <li class="list1_desc">
+              <h3>Думать</h3>
+              <p>Люблю сидеть и размышлять о том, как попасть в неприятности.</p>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-4">
-          <img src="images/3.jpg" class="about-img">
-          <h3>Хитрая</h3>
-          <p>А кто мне, что сделает.</p>
+      </section>
+
+      <section id="work">
+        <div class="row" style="text-align:center; background:#FF8C42; color:#fff;">
+          <h2>Милые фото</h2>
+          <p class="lead">Мои лучшие кадры</p>
+          <hr>
+          
+          <ul class="work-list">
+            <li class="work_desc"><h3>Красота</h3></li>
+            <li class="work_img"><img src="images/8.jpg" class="img-responsive" alt="Лиса Алиса с красивой рыжей шубкой на солнце"></li>
+          </ul>
+
+          <ul class="work-list">
+            <li class="work_desc"><h3>Охота</h3></li>
+            <li class="work_img"><img src="images/9.jpg" class="img-responsive" alt="Лиса Алиса выслеживает добычу в высокой траве"></li>
+          </ul>
+
+          <ul class="work-list">
+            <li class="work_desc"><h3>Отдых</h3></li>
+            <li class="work_img"><img src="images/11.jpg" class="img-responsive" alt="Лиса Алиса отдыхает на мягком мху"></li>
+          </ul>
+
+          <ul class="work-list">
+            <li class="work_desc"><h3>Улыбка</h3></li>
+            <li class="work_img"><img src="images/12.jpg" class="img-responsive" alt="Лиса Алиса улыбается, показывая зубки"></li>
+          </ul>
         </div>
-      </div>
-    </div>
-
-    <div id="method">
-      <div class="row" style="text-align:center; background:#FFF3E0;">
-        <h2>Любимые занятия</h2>
-        <hr />
-        
-        <ul class="method-list">
-          <li class="list1_img"><img src="images/5.jpg" class="img-responsive" alt="Охота"></li>
-          <li class="list1_desc">
-            <h3>Охота</h3>
-            <p>Обожаю ловить мышек. Могу часами прыгать и выслеживать добычу.</p>
-          </li>
-          <div class="clearfix"></div>
-        </ul>
-
-        <ul class="method-list">
-          <li class="list1_img"><img src="images/4.jpg" class="img-responsive" alt="Сон"></li>
-          <li class="list1_desc">
-            <h3>Хитрить</h3>
-            <p>Люблю строить планы, как достать все живых.</p>
-          </li>
-          <div class="clearfix"></div>
-        </ul>
-
-        <ul class="method-list">
-          <li class="list1_img"><img src="images/10.jpg" class="img-responsive" alt="Вкусняшки"></li>
-          <li class="list1_desc">
-            <h3>Сон</h3>
-            <p>Главное моё удовольствие — поспать.</p>
-          </li>
-          <div class="clearfix"></div>
-        </ul>
-
-        <ul class="method-list">
-          <li class="list1_img"><img src="images/6.jpg" class="img-responsive" alt="Игры"></li>
-          <li class="list1_desc">
-            <h3>Думать</h3>
-            <p>Люблю, сидеть и размышлять о том как попасть в неприятности.</p>
-          </li>
-          <div class="clearfix"></div>
-        </ul>
-      </div>
-    </div>
-
-    <div id="work">
-      <div class="row" style="text-align:center; background:#FF8C42; color:#fff;">
-        <h2>Милые фото</h2>
-        <hr />
-        
-        <ul class="work-list">
-          <li class="work_desc"><h3>Красота</h3></li>
-          <li class="work_img"><img src="images/8.jpg" class="img-responsive" alt="Фото"></li>
-          <div class="clearfix"></div>
-        </ul>
-
-        <ul class="work-list">
-          <li class="work_desc"><h3>Охота</h3></li>
-          <li class="work_img"><img src="images/9.jpg" class="img-responsive" alt="Фото"></li>
-          <div class="clearfix"></div>
-        </ul>
-
-        <ul class="work-list">
-          <li class="work_desc"><h3>Отдых</h3></li>
-          <li class="work_img"><img src="images/11.jpg" class="img-responsive" alt="Фото"></li>
-          <div class="clearfix"></div>
-        </ul>
-
-        <ul class="work-list">
-          <li class="work_desc"><h3>Улыбка</h3></li>
-          <li class="work_img"><img src="images/12.jpg" class="img-responsive" alt="Фото"></li>
-          <div class="clearfix"></div>
-        </ul>
-      </div>
-    </div>
+      </section>
+    </main>
   </div>
 
   <footer>
     <div style="text-align:right; background:#2a2a2a; padding:1em; color:#fff;">
-      <i class="fa fa-paw"></i> Сайт лисы Нил — все права защищены<br>
-      © Нил | 2025-2026
+      <i class="fa fa-paw"></i> Сайт лисы Алисы — все права защищены<br>
+      © Алиса | 2025-2026
     </div>
   </footer>
 </body>
